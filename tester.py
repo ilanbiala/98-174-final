@@ -69,17 +69,20 @@ def testDistance():
     print("Testing distance()...", end="")
     assert(distance(0, 0, 1, 0) == 1)
     assert(distance(0, 0, -1, 0) == 1)
-    assert(distance(3, 0, 0, 4) == 5)
+    assert(distance(3, 1, 0, 4) == 5)
     print("passed!")
 
 def testAll():
     print("Testing all simulator functions...")
-    testAdd()
-    testMultiply()
-    testDivide()
-    testSquare()
-    testMod()
-    testDistance()
-    print("All simulator functions passed!")
-
-testAll()
+    try:
+        testAdd()
+        testMultiply()
+        testDivide()
+        testSquare()
+        testMod()
+        testDistance()
+    except Exception as e:
+        return False
+    else:
+        print("All simulator functions passed!")
+        return True
