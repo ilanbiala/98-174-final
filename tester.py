@@ -1,4 +1,4 @@
-import simulator
+from simulator import *
 
 def testAdd():
     print("Testing add()...", end="")
@@ -43,7 +43,7 @@ def testSquare():
     print("Testing square()...", end="")
     assert(square(0) == 0)
     assert(square(1) == 1)
-    assert(square(-1) == -1)
+    assert(square(-1) == 1)
     assert(square(--1) == 1)
     assert(square(2) == 4)
     assert(square(2/4) == 1/4)
@@ -55,14 +55,22 @@ def testSquare():
 
 def testMod():
     print("Testing mod()...", end="")
-    raise Exception("Will be added later!")
-    return x % y
+    assert(mod(0, 1) == 0)
+    assert(mod(0, -1) == 0)
+    assert(mod(1, 1) == 0)
+    assert(mod(1, -1) == 0)
+    assert(mod(-1, -1) == 0)
+    assert(mod(2, 4) == 2)
+    assert(mod(2, -4) == -2)
+    assert(mod(-2, 4) == 2)
+    print("passed!")
 
 def testDistance():
     print("Testing distance()...", end="")
-
-    raise Exception("Will be added later!")
-    return sqrt(square(x2 - x1, x2 - x1) + square(y2 - x1, y2 - x1))
+    assert(distance(0, 0, 1, 0) == 1)
+    assert(distance(0, 0, -1, 0) == 1)
+    assert(distance(3, 0, 0, 4) == 5)
+    print("passed!")
 
 def testAll():
     print("Testing all simulator functions...")
