@@ -1,2 +1,9 @@
+from tester import *
+
 def deploy():
-    return "Deployed"
+    if (testAll()):
+        print("Deployed")
+    else:
+        raise Exception("Tests failed, didn't deploy")
+
+deploy()
