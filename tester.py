@@ -1,4 +1,4 @@
-import simulator
+from simulator import *
 
 def testAdd():
     print("Testing add()...", end="")
@@ -43,7 +43,7 @@ def testSquare():
     print("Testing square()...", end="")
     assert(square(0) == 0)
     assert(square(1) == 1)
-    assert(square(-1) == -1)
+    assert(square(-1) == 1)
     assert(square(--1) == 1)
     assert(square(2) == 4)
     assert(square(2/4) == 1/4)
